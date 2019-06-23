@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+  <meta name="description" content="Prodaja meda od KESTENA, provjereren kvalitet i opravdane cijene. Živite zdravo i unosite hranu iz prirode. Provjeravanje naših proizvoda moguće u bilo kojoj laboratoriji.">
+  <meta name="author" content="Nikola Pilipović">
+  <meta name="keywords" content="med od kestena, kestenov med, kestenov med prodaja, kestenov med cijena, med, kesten, kostajnica">
+  <meta property="og:title" content="Pilipović med">
+  <meta property="og:image" content="https://5.imimg.com/data5/UD/MB/MY-42635865/natural-honey-500x500.jpg">
+	
+    <title>Pilipović med</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+	<link rel="shortcut icon" type="image/png" href="images/pcelica.png"/>
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
+
+  </head>
+
+  <body id="page-top">
+    <div id="app"></div>
+  </body>
+
+
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_VpwbgdRtrgf70evGs69tE");
+   })();
+</script>
+<script type="text/javascript">
+  var myform = $("form#myform");
+myform.submit(function(event){
+  event.preventDefault();
+
+  // Change to your service ID, or keep using the default service
+  var service_id = "gmail";
+  var template_id = "narudzba";
+
+  myform.find("button").text("Sending...");
+  emailjs.sendForm(service_id,template_id,myform[0])
+    .then(function(){ 
+      alert("Poslano!");
+       myform.find("button").text("Send");
+    }, function(err) {
+       alert("Greška!\r\n Response:\n " + JSON.stringify(err));
+       myform.find("button").text("Send");
+    });
+  return false;
+});
+</script>
